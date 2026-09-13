@@ -22,11 +22,11 @@ jobs:
     - name: Setup Gradle
       uses: gradle/actions/setup-gradle@v3
 
-    - name: Make gradle wrapper executable
-      run: chmod +x gradlew || true
-
-    - name: Build APK
-      run: ./gradlew assembleDebug || gradle assembleDebug
+    - name: Build with Gradle
+      run: |
+        gradle wrapper
+        chmod +x gradlew
+        ./gradlew assembleDebug --stacktrace
 
     - name: Upload APK
       uses: actions/upload-artifact@v4
