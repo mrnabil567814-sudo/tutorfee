@@ -1,0 +1,6 @@
+{
+  "name": "TutorFee",
+  "description": "Student monthly fee management for private tutors with Room database, automated bKash and Nagad SMS payment detection, QR code payments, and SMS receipts.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
