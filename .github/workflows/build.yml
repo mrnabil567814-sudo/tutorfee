@@ -30,11 +30,10 @@ jobs:
     - name: Build with Gradle
       env:
         JAVA_TOOL_OPTIONS: "-Djava.awt.headless=true"
-        GRADLE_OPTS: "-Dorg.gradle.jvmargs='-Xmx4g -Djava.awt.headless=true'"
       run: |
         gradle wrapper
         chmod +x gradlew
-        ./gradlew assembleDebug --stacktrace
+        ./gradlew assembleDebug --no-daemon -Dksp.incremental=false -Djava.awt.headless=true --stacktrace
 
     - name: Upload APK
       uses: actions/upload-artifact@v4
