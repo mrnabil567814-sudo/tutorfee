@@ -22,6 +22,11 @@ jobs:
     - name: Setup Gradle
       uses: gradle/actions/setup-gradle@v3
 
+    - name: Create missing env files
+      run: |
+        touch .env
+        touch .env.example
+
     - name: Build with Gradle
       run: |
         gradle wrapper
